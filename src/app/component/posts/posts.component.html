@@ -1,0 +1,27 @@
+<form class="form">
+  <mat-form-field class="full-width">
+    <input #searchInput matInput placeholder="Search article" (keyup) = "onSearchByKeyWord($event)">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Filter by date published</mat-label>
+    <input #dateInput matInput [matDatepicker]="picker"  (dateInput)="onSearchByDate($event)" disabled>
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+  </mat-form-field>
+</form>
+  <mat-card class="card"  *ngFor="let article of articles">
+    <mat-card-header>
+      <div mat-card-avatar [ngStyle]="{'background-image': article.source.id !== null ? 'url(../assets/images/'+ article.source.id +'.png)' : '' }" class="header-image"></div>
+      <mat-card-title class="title">{{article.title}}</mat-card-title>
+      <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+      <mat-card-subtitle>{{article.publishedAt | date:'longDate'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+    <mat-card-content>
+      <p>
+        {{article.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
