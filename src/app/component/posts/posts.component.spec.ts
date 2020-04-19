@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PostsComponent } from './posts.component';
 import { DatePipe } from '@angular/common';
-import { NewsService } from 'src/common/services/news.service';
+import { NewsService } from '../../../common/services/news.service';
 import { of } from 'rxjs';
 
 
