@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <button mat-button (click)="toggleSidenav()"><mat-icon>menu</mat-icon></button>
+  <span>News articles</span>  
+  <span class="spacer"></span>
+  <button mat-button ><mat-icon>settings</mat-icon></button>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+<app-source
+[openSidenav] ="openSidenav"
+(sourceArticles) ="onSourceArticle($event)">
+</app-source>
+<app-posts
+[articles] = "articles"
+></app-posts>
+</mat-sidenav-container>

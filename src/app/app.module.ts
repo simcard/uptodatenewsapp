@@ -18,12 +18,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
+import { HomeComponent } from './component/home/home.component';
+import { SourceComponent } from './component/source/source.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       BaseComponent,
       PostsComponent,
+      HomeComponent,
+      SourceComponent
    ],
    imports: [
       BrowserModule,
